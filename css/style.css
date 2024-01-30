@@ -351,6 +351,11 @@ body {
   padding: 10px 20px;
   overflow: hidden;
 }
+@media (max-width: 474.98px) {
+  .container {
+    padding: 10px 10px;
+  }
+}
 
 .btn {
   white-space: nowrap;

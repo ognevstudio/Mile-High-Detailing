@@ -63,6 +63,7 @@ $s8: 100;
 .border-radius {
 	border-radius: 6px;
 }
+
 // ------------------------------
 
 // -- Файлы стилей
@@ -87,6 +88,10 @@ body {
 	margin: 0px auto;
 	padding: px($s2) px($s3);
 	overflow: hidden;
+
+	@media (max-width: px($wc2)) {
+		padding: px($s2) px($s2);
+	}
 }
 
 .btn {
