@@ -1,0 +1,119 @@
+// ------------------------------ 
+
+// Системные файлы
+@use 'sass:math';
+
+// -- Системные стили
+@import './normalize';
+@import './av';
+@import './px';
+
+// ------------------------------
+
+// Цветовые стили
+$main-white: #ffffff;
+$main-bg: #111111;
+$main-yellow: #FFF500;
+
+$txt-white: #ffffff;
+$txt-black: #000000;
+
+$txt-light-gray: #CDCDCD;
+$txt-gray: #919191;
+$txt-dark-gray: #2D2D2D;
+$txt-yellow: #FFF500;
+
+// ------------------------------
+
+// Разрешения экранов
+// WidthContainer
+$maxWC: 1300;
+
+$wc4: 991.98;
+$wc3: 767.98;
+$wc2: 474.98;
+$wc1: 359.98;
+
+$minWC: 360;
+
+// ------------------------------
+
+// Система отступов
+// -- Переменные 
+// s - space
+$s1: 8;
+$s2: 10;
+$s3: 20;
+$s4: 30;
+$s5: 40;
+$s6: 60;
+$s7: 80;
+$s8: 100;
+
+
+// -- Классы
+.margin-top {
+	@include av('margin-top', $s7, $s6, $maxWC, $minWC);
+}
+
+.small-margin-top {
+	// @include av('margin-top', $s6, $s5, $maxWc, $minWc);
+}
+
+.border-radius {
+	border-radius: 6px;
+}
+// ------------------------------
+
+// -- Файлы стилей
+@import './fonts';
+@import './header';
+
+@import './hero';
+@import './poster';
+
+@import './footer';
+
+// ------------------------------
+
+// Системные классы
+body {
+	background-color: $main-bg;
+	color: $txt-gray;
+}
+
+.container {
+	max-width: px($maxWC);
+	margin: 0px auto;
+	padding: px($s2) px($s3);
+	overflow: hidden;
+}
+
+.btn {
+	white-space: nowrap;
+	display: inline-block;
+	max-height: 100%;
+
+	font-family: "Helvetica Neue";
+	@include av('font-size', 20, 17, $maxWC, $minWC);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%;
+	color: $txt-black;
+
+	border-radius: 6px;
+
+	transition: 0.2s;
+	background-color: $main-white;
+	padding: 10px 20px 12px 20px;
+
+	&:hover {
+		background-color: $main-yellow;
+	}
+
+	@media (max-width: px($wc3)) {
+		padding: 6px 20px 8px 20px;
+	}
+}
+
+// ------------------------------

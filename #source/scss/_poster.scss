@@ -1,0 +1,65 @@
+.poster {
+	padding-bottom: 200px;
+}
+
+.poster__conatiner {
+	position: relative;
+}
+
+.poster__txt-body {
+	display: grid;
+	width: fit-content;
+	margin-left: auto;
+	grid-template-columns: 1fr 1fr;
+	justify-content: end;
+	gap: 20px;
+
+	p {
+		display: block;
+		width: auto;
+		max-width: 530px;
+
+		@media (max-width: px($wc3)) {
+			width: 100%;
+		}
+	}
+
+	@include av('margin-bottom', $s5, $s3, $maxWC, $minWC);
+
+	@media (max-width: px($wc3)) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.desktop-text {
+	max-width: 530px;
+
+	p:first-child {
+		margin-bottom: 16px;
+	}
+
+	@media (max-width: px($wc3)) {
+		display: none;
+	}
+}
+
+
+
+.poster__desktop-img {
+	width: 100%;
+
+	@media (max-width: px($wc3)) {
+		display: none;
+	}
+}
+
+.poster__mobile-img {
+	display: none;
+	width: 100%;
+
+	max-height: 500px;
+
+	@media (max-width: px($wc3)) {
+		display: block;
+	}
+}

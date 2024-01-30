@@ -1,0 +1,73 @@
+.line__container {
+	width: 100vw;
+	overflow: hidden;
+	@include av('margin-top', $s5, $s4, $maxWC, $minWC);
+}
+
+.line {
+	display: block;
+	@include av('height', 140, 60, $maxWC, $minWC);
+
+	/* Сохраняет пропорции изображения */
+	animation: moveLine 100s linear infinite;
+	/* Анимация для создания эффекта "бегущей линии" */
+}
+
+@keyframes moveLine {
+	0% {
+		transform: translateX(0);
+		/* Начальное положение */
+	}
+
+	100% {
+		transform: translateX(-100%);
+		/* Сдвигает изображение на 100% влево */
+	}
+}
+
+.hero {
+	@include av('margin-top', $s5, $s4, $maxWC, $minWC);
+}
+
+.hero__container {
+	display: flex;
+	@include av('gap', $s3, $s2, $maxWC, $minWC);
+
+	@media (max-width: px($wc4)) {
+		display: block;
+	}
+}
+
+.hero__body {}
+
+.hero__img {
+
+	width: 60%;
+
+	height: auto;
+	max-height: 500px;
+
+	@media (max-width: px($wc4)) {
+		width: 100%;
+	}
+}
+
+.hero__txt-body {
+	@media (max-width: px($wc4)) {
+		margin-top: 20px;
+
+		display: flex;
+		align-items: start;
+		gap: 20px;
+	}
+
+	@media (max-width: px($wc2)) {
+		display: block;
+	}
+}
+
+.hero__txt {
+	display: block;
+	max-width: 500px;
+	@include av('margin-bottom', $s3, $s2, $maxWC, $minWC);
+}

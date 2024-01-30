@@ -1,0 +1,31 @@
+.header {
+	@include av('padding-top', $s3, $s2, $maxWC, $minWC);
+	@include av('padding-bottom', $s3, $s2, $maxWC, $minWC);
+	border-bottom: 2px solid $txt-gray;
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center
+}
+
+.desktop-logo {
+	@include av('height', 40, 20, $maxWC, $minWC);
+}
+
+.mobile-logo {
+	display: none;
+}
+
+@media (max-width: px($wc3)) {
+	.mobile-logo {
+		display: block;
+	}
+
+	.desktop-logo {
+		display: none;
+	}
+}
+
+.btn {}

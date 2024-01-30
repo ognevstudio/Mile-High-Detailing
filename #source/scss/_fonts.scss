@@ -1,0 +1,33 @@
+// ------------------------------
+
+
+// Подключение шрифтов
+// -- Archivo Black
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+// -- Inter
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap'); // Текстовые стили
+
+.title {
+	font-family: "Archivo Black", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.text {
+	color: $txt-gray;
+	font-family: "Arimo", sans-serif;
+	@include av('font-size', 20, 17, $maxWC, $minWC);
+	line-height: 120%;
+	font-weight: 400;
+	/* 24px */
+}
+
+.bold-text {
+	color: $txt-gray;
+	font-family: "Arimo", sans-serif;
+	@include av('font-size', 20, 17, $maxWC, $minWC);
+	line-height: 120%;
+}
+
+// ------------------------------
