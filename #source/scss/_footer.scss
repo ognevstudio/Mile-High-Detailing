@@ -1,0 +1,35 @@
+.footer {
+	padding-bottom: 70px;
+	display: block;
+
+	@include av('font-size', 72, 36, $maxWC, $minWC);
+	text-transform: uppercase;
+	line-height: 120%;
+	letter-spacing: 3px;
+
+	p {
+		color: $main-bg;
+		/* Цвет текста */
+		text-shadow:
+			1px 0 0 $txt-dark-gray,
+			0 1px 0 $txt-dark-gray,
+			-1px 0 0 $txt-dark-gray,
+			0 -1px 0 $txt-dark-gray,
+			/* Белая тень по периметру текста */
+			1px 1px $txt-dark-gray,
+			-1px -1px 0 $txt-dark-gray,
+			1px -1px 0 $txt-dark-gray,
+			-1px 1px 0 $txt-dark-gray;
+		/* Тени вокруг текста создают эффект обводки */
+	}
+
+	a {
+		transition: 0.3s;
+		color: $txt-dark-gray;
+		text-shadow: none;
+
+		&:hover {
+			color: $txt-yellow;
+		}
+	}
+}

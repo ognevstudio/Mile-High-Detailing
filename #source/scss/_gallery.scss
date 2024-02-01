@@ -1,0 +1,52 @@
+.gallery {
+	width: 100vw;
+	overflow: hidden;
+}
+
+.gallery__container {
+	display: flex;
+	gap: 20px;
+	animation: moveLine 10s linear infinite;
+
+	@media (max-width: px($wc3)) {
+		display: block;
+
+		max-width: px($maxWC);
+		margin: 0px auto;
+		padding: 0px px($s3);
+		overflow: hidden;
+
+		animation: none;
+		-webkit-animation: none;
+	}
+
+	@media (max-width: px($wc2)) {
+		padding: 0 px($s2);
+	}
+}
+
+@keyframes moveLine {
+	0% {
+		transform: translateX(0);
+		/* Начальное положение */
+	}
+
+	100% {
+		transform: translateX(-80%);
+		/* Сдвигает изображение на 100% влево */
+	}
+}
+
+.gallery__img {
+	@include av('height', 400, 280, $maxWC, $minWC);
+
+	@media (max-width: px($wc3)) {
+		display: none;
+
+		&:first-child {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+}

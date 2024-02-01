@@ -13,15 +13,15 @@
 // Цветовые стили
 $main-white: #ffffff;
 $main-bg: #111111;
-$main-yellow: #FFF500;
+$main-yellow: #FFD51B;
 
 $txt-white: #ffffff;
 $txt-black: #000000;
 
 $txt-light-gray: #CDCDCD;
 $txt-gray: #919191;
-$txt-dark-gray: #2D2D2D;
-$txt-yellow: #FFF500;
+$txt-dark-gray: #555555;
+$txt-yellow: #FFD51B;
 
 // ------------------------------
 
@@ -73,6 +73,8 @@ $s8: 100;
 @import './hero';
 @import './poster';
 
+@import './gallery';
+
 @import './footer';
 
 // ------------------------------
@@ -86,11 +88,11 @@ body {
 .container {
 	max-width: px($maxWC);
 	margin: 0px auto;
-	padding: px($s2) px($s3);
+	padding: 0 px($s3);
 	overflow: hidden;
 
 	@media (max-width: px($wc2)) {
-		padding: px($s2) px($s2);
+		padding: 0 px($s2);
 	}
 }
 
