@@ -491,7 +491,6 @@ h6 {
 }
 
 .footer {
-  padding-bottom: 70px;
   display: block;
 }
 .footer a {
@@ -501,6 +500,23 @@ h6 {
 }
 .footer a:hover {
   color: #FFD51B;
+}
+.footer span {
+  margin: 20px 0px 30px 0px;
+  display: block;
+  color: #232323;
+  font-family: "Archivo Black";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 24px */
+  text-transform: uppercase;
+}
+@media (max-width: 1300px) {
+  .footer span {
+    font-size: calc(15px + 5 * (100vw - 360px) / 940);
+  }
 }
 
 body {
