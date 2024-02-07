@@ -1,0 +1,54 @@
+.mud {}
+
+.mud__container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	@include av('gap', $s3, $s2, $maxWC, $minWC);
+
+	@media (max-width: px($wc3)) {
+		display: block;
+	}
+}
+
+.mud-title {
+	@media (max-width: px($wc3)) {
+		display: block;
+		width: 100%;
+		@include av('margin-bottom', $s3, $s2, $maxWC, $minWC);
+	}
+}
+
+.mud__txt-body {
+	p {
+		@include av('margin-bottom', $s3, $s2, $maxWC, $minWC);
+	}
+
+	span {
+		display: block;
+		padding-bottom: 10px;
+
+		@media (max-width: 1200px) {
+			padding-bottom: 0px;
+
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+
+	@media (max-width: px($wc3)) {
+		width: 80%;
+		margin-left: auto;
+	}
+
+	@media (max-width: px($wc2)) {
+		display: block;
+		width: 100%;
+	}
+}
+
+.mud__txt {}
+
+.text {}
+
+.btn {}

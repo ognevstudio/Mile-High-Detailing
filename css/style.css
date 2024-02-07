@@ -88,11 +88,20 @@ h6 {
 
 /* ---------------- */
 .margin-top {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 @media (max-width: 1300px) {
   .margin-top {
-    margin-top: calc(60px + 20 * (100vw - 360px) / 940);
+    margin-top: calc(60px + 40 * (100vw - 360px) / 940);
+  }
+}
+
+.small-margin-top {
+  margin-top: 40px;
+}
+@media (max-width: 1300px) {
+  .small-margin-top {
+    margin-top: calc(30px + 10 * (100vw - 360px) / 940);
   }
 }
 
@@ -104,10 +113,30 @@ h6 {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
+  text-align: left;
+  color: #111111;
+  margin-bottom: 8px;
+  /* Цвет текста */
+  text-shadow: 1px 0 0 #555555, 0 1px 0 #555555, -1px 0 0 #555555, 0 -1px 0 #555555, 1px 1px #555555, -1px -1px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555;
+  /* Тени вокруг текста создают эффект обводки */
+  font-size: 72px;
+  text-transform: uppercase;
+  line-height: 120%;
+  letter-spacing: 3px;
+}
+@media (max-width: 767.98px) {
+  .title {
+    text-shadow: 0.5px 0 0 #555555, 0 0.5px 0 #555555, -0.5px 0 0 #555555, 0 -0.5px 0 #555555, 0.5px 0.5px #555555, -0.5px -0.5px 0 #555555, 0.5px -0.5px 0 #555555, -0.5px 0.5px 0 #555555;
+  }
+}
+@media (max-width: 1300px) {
+  .title {
+    font-size: calc(28px + 44 * (100vw - 360px) / 940);
+  }
 }
 
 .text {
-  color: #919191;
+  color: #878787;
   font-family: "Arimo", sans-serif;
   font-size: 20px;
   line-height: 120%;
@@ -121,7 +150,7 @@ h6 {
 }
 
 .bold-text {
-  color: #919191;
+  color: #878787;
   font-family: "Arimo", sans-serif;
   font-size: 20px;
   line-height: 120%;
@@ -133,13 +162,17 @@ h6 {
 }
 
 .header {
-  padding-top: 20px;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: #111111;
+  padding-top: 30px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #919191;
+  border-bottom: 2px solid #878787;
 }
 @media (max-width: 1300px) {
   .header {
-    padding-top: calc(10px + 10 * (100vw - 360px) / 940);
+    padding-top: calc(20px + 10 * (100vw - 360px) / 940);
   }
 }
 @media (max-width: 1300px) {
@@ -175,15 +208,18 @@ h6 {
     display: none;
   }
 }
+.hero-line {
+  padding-top: 120px;
+}
+@media (max-width: 1300px) {
+  .hero-line {
+    padding-top: calc(100px + 20 * (100vw - 360px) / 940);
+  }
+}
+
 .line__container {
   width: 100vw;
   overflow: hidden;
-  margin-top: 40px;
-}
-@media (max-width: 1300px) {
-  .line__container {
-    margin-top: calc(30px + 10 * (100vw - 360px) / 940);
-  }
 }
 
 .line {
@@ -336,6 +372,68 @@ h6 {
   }
 }
 
+.mud__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 1300px) {
+  .mud__container {
+    gap: calc(10px + 10 * (100vw - 360px) / 940);
+  }
+}
+@media (max-width: 767.98px) {
+  .mud__container {
+    display: block;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mud-title {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767.98px) and (max-width: 1300px) {
+  .mud-title {
+    margin-bottom: calc(10px + 10 * (100vw - 360px) / 940);
+  }
+}
+
+.mud__txt-body p {
+  margin-bottom: 20px;
+}
+@media (max-width: 1300px) {
+  .mud__txt-body p {
+    margin-bottom: calc(10px + 10 * (100vw - 360px) / 940);
+  }
+}
+.mud__txt-body span {
+  display: block;
+  padding-bottom: 10px;
+}
+@media (max-width: 1200px) {
+  .mud__txt-body span {
+    padding-bottom: 0px;
+  }
+  .mud__txt-body span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .mud__txt-body {
+    width: 80%;
+    margin-left: auto;
+  }
+}
+@media (max-width: 474.98px) {
+  .mud__txt-body {
+    display: block;
+    width: 100%;
+  }
+}
+
 .gallery {
   width: 100vw;
   overflow: hidden;
@@ -395,21 +493,6 @@ h6 {
 .footer {
   padding-bottom: 70px;
   display: block;
-  font-size: 72px;
-  text-transform: uppercase;
-  line-height: 120%;
-  letter-spacing: 3px;
-}
-@media (max-width: 1300px) {
-  .footer {
-    font-size: calc(36px + 36 * (100vw - 360px) / 940);
-  }
-}
-.footer p {
-  color: #111111;
-  /* Цвет текста */
-  text-shadow: 1px 0 0 #555555, 0 1px 0 #555555, -1px 0 0 #555555, 0 -1px 0 #555555, 1px 1px #555555, -1px -1px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555;
-  /* Тени вокруг текста создают эффект обводки */
 }
 .footer a {
   transition: 0.3s;
@@ -422,7 +505,7 @@ h6 {
 
 body {
   background-color: #111111;
-  color: #919191;
+  color: #878787;
 }
 
 .container {

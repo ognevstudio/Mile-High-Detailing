@@ -1,7 +1,10 @@
+.hero-line {
+	@include av('padding-top', 120, 100, $maxWC, $minWC);
+}
+
 .line__container {
 	width: 100vw;
 	overflow: hidden;
-	@include av('margin-top', $s5, $s4, $maxWC, $minWC);
 }
 
 .line {

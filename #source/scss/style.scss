@@ -19,7 +19,7 @@ $txt-white: #ffffff;
 $txt-black: #000000;
 
 $txt-light-gray: #CDCDCD;
-$txt-gray: #919191;
+$txt-gray: #878787;
 $txt-dark-gray: #555555;
 $txt-yellow: #FFD51B;
 
@@ -53,11 +53,11 @@ $s8: 100;
 
 // -- Классы
 .margin-top {
-	@include av('margin-top', $s7, $s6, $maxWC, $minWC);
+	@include av('margin-top', $s8, $s6, $maxWC, $minWC);
 }
 
 .small-margin-top {
-	// @include av('margin-top', $s6, $s5, $maxWc, $minWc);
+	@include av('margin-top', $s5, $s4, $maxWC, $minWC);
 }
 
 .border-radius {
@@ -72,7 +72,7 @@ $s8: 100;
 
 @import './hero';
 @import './poster';
-
+@import './mud';
 @import './gallery';
 
 @import './footer';

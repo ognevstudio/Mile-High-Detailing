@@ -12,6 +12,39 @@
 	font-family: "Archivo Black", sans-serif;
 	font-weight: 400;
 	font-style: normal;
+	text-align: left;
+	color: $main-bg;
+	margin-bottom: 8px;
+	/* Цвет текста */
+	text-shadow:
+		1px 0 0 $txt-dark-gray,
+		0 1px 0 $txt-dark-gray,
+		-1px 0 0 $txt-dark-gray,
+		0 -1px 0 $txt-dark-gray,
+		/* Белая тень по периметру текста */
+		1px 1px $txt-dark-gray,
+		-1px -1px 0 $txt-dark-gray,
+		1px -1px 0 $txt-dark-gray,
+		-1px 1px 0 $txt-dark-gray;
+	/* Тени вокруг текста создают эффект обводки */
+
+	@media (max-width: px($wc3)) {
+		text-shadow:
+			0.5px 0 0 $txt-dark-gray,
+			0 0.5px 0 $txt-dark-gray,
+			-0.5px 0 0 $txt-dark-gray,
+			0 -0.5px 0 $txt-dark-gray,
+			/* Белая тень по периметру текста */
+			0.5px 0.5px $txt-dark-gray,
+			-0.5px -0.5px 0 $txt-dark-gray,
+			0.5px -0.5px 0 $txt-dark-gray,
+			-0.5px 0.5px 0 $txt-dark-gray;
+	}
+
+	@include av('font-size', 72, 28, $maxWC, $minWC);
+	text-transform: uppercase;
+	line-height: 120%;
+	letter-spacing: 3px;
 }
 
 .text {
