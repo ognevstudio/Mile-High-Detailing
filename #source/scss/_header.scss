@@ -3,15 +3,16 @@
 	z-index: 100;
 	width: 100%;
 	background-color: $main-bg;
+	border-bottom: 2px solid $txt-gray;
+
 	@include av('padding-top', $s4, $s3, $maxWC, $minWC);
 	@include av('padding-bottom', $s3, $s2, $maxWC, $minWC);
-	border-bottom: 2px solid $txt-gray;
 }
 
 .header__container {
 	display: flex;
 	justify-content: space-between;
-	align-items: center
+	align-items: center;
 }
 
 .desktop-logo {
@@ -31,5 +32,3 @@
 		display: none;
 	}
 }
-
-.btn {}

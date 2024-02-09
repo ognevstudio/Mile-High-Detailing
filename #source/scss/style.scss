@@ -1,46 +1,39 @@
-// ------------------------------ 
-
-// Системные файлы
+// ------------------------------
+// System Files
+// ------------------------------
 @use 'sass:math';
-
-// -- Системные стили
 @import './normalize';
 @import './av';
 @import './px';
 
 // ------------------------------
-
-// Цветовые стили
+// Color Styles
+// ------------------------------
 $main-white: #ffffff;
 $main-bg: #111111;
 $main-yellow: #FFD51B;
 
 $txt-white: #ffffff;
 $txt-black: #000000;
-
 $txt-light-gray: #CDCDCD;
 $txt-gray: #878787;
 $txt-dark-gray: #555555;
 $txt-yellow: #FFD51B;
 
 // ------------------------------
-
-// Разрешения экранов
-// WidthContainer
+// Screen Resolutions
+// WidthContainer Variables
+// ------------------------------
 $maxWC: 1300;
-
 $wc4: 991.98;
 $wc3: 767.98;
 $wc2: 474.98;
 $wc1: 359.98;
-
 $minWC: 360;
 
 // ------------------------------
-
-// Система отступов
-// -- Переменные 
-// s - space
+// Spacing System
+// ------------------------------
 $s1: 8;
 $s2: 10;
 $s3: 20;
@@ -50,8 +43,7 @@ $s6: 60;
 $s7: 80;
 $s8: 100;
 
-
-// -- Классы
+// Margin Classes
 .margin-top {
 	@include av('margin-top', $s8, $s6, $maxWC, $minWC);
 }
@@ -65,21 +57,20 @@ $s8: 100;
 }
 
 // ------------------------------
-
-// -- Файлы стилей
+// Style Files
+// ------------------------------
 @import './fonts';
 @import './header';
-
 @import './hero';
 @import './poster';
 @import './mud';
+@import './service';
 @import './gallery';
-
 @import './footer';
 
 // ------------------------------
-
-// Системные классы
+// System Classes
+// ------------------------------
 body {
 	background-color: $main-bg;
 	color: $txt-gray;
@@ -87,7 +78,7 @@ body {
 
 .container {
 	max-width: px($maxWC);
-	margin: 0px auto;
+	margin: 0 auto;
 	padding: 0 px($s3);
 	overflow: hidden;
 
@@ -109,7 +100,6 @@ body {
 	color: $txt-black;
 
 	border-radius: 6px;
-
 	transition: 0.2s;
 	background-color: $main-white;
 	padding: 10px 20px 12px 20px;
@@ -122,5 +112,3 @@ body {
 		padding: 6px 20px 8px 20px;
 	}
 }
-
-// ------------------------------

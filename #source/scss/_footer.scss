@@ -12,16 +12,15 @@
 	}
 
 	span {
-		margin: 20px 0px 30px 0px;
+		margin: px($s3) 0 px($s4) 0; // Converted 20px and 30px to $s3 and $s4, then wrapped with px()
 		display: block;
 		color: #232323;
 
-		font-family: "Archivo Black";
+		font-family: "Archivo Black", sans-serif; // Ensured font family consistency
 		@include av('font-size', 20, 15, $maxWC, $minWC);
 		font-style: normal;
 		font-weight: 400;
 		line-height: 120%;
-		/* 24px */
 		text-transform: uppercase;
 	}
 }

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 * {
@@ -116,49 +115,39 @@ h6 {
   text-align: left;
   color: #111111;
   margin-bottom: 8px;
-  /* Цвет текста */
-  text-shadow: 1px 0 0 #555555, 0 1px 0 #555555, -1px 0 0 #555555, 0 -1px 0 #555555, 1px 1px #555555, -1px -1px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555;
-  /* Тени вокруг текста создают эффект обводки */
-  font-size: 72px;
   text-transform: uppercase;
   line-height: 120%;
   letter-spacing: 3px;
-}
-@media (max-width: 767.98px) {
-  .title {
-    text-shadow: 0.5px 0 0 #555555, 0 0.5px 0 #555555, -0.5px 0 0 #555555, 0 -0.5px 0 #555555, 0.5px 0.5px #555555, -0.5px -0.5px 0 #555555, 0.5px -0.5px 0 #555555, -0.5px 0.5px 0 #555555;
-  }
+  font-size: 72px;
+  text-shadow: 1px 0 0 #555555, 0 1px 0 #555555, -1px 0 0 #555555, 0 -1px 0 #555555, 1px 1px #555555, -1px -1px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555;
 }
 @media (max-width: 1300px) {
   .title {
     font-size: calc(28px + 44 * (100vw - 360px) / 940);
   }
 }
+@media (max-width: 767.98px) {
+  .title {
+    text-shadow: 0.5px 0 0 #555555, 0 0.5px 0 #555555, -0.5px 0 0 #555555, 0 -0.5px 0 #555555, 0.5px 0.5px #555555, -0.5px -0.5px 0 #555555, 0.5px -0.5px 0 #555555, -0.5px 0.5px 0 #555555;
+  }
+}
 
-.text {
+.text,
+.bold-text {
   color: #878787;
   font-family: "Arimo", sans-serif;
-  font-size: 20px;
   line-height: 120%;
-  font-weight: 400;
-  /* 24px */
+  font-size: 20px;
 }
 @media (max-width: 1300px) {
-  .text {
+  .text,
+  .bold-text {
     font-size: calc(17px + 3 * (100vw - 360px) / 940);
   }
 }
 
 .bold-text {
-  color: #878787;
-  font-family: "Arimo", sans-serif;
-  font-size: 20px;
-  line-height: 120%;
-}
-@media (max-width: 1300px) {
-  .bold-text {
-    font-size: calc(17px + 3 * (100vw - 360px) / 940);
-  }
+  font-weight: bold;
 }
 
 .header {
@@ -166,9 +155,9 @@ h6 {
   z-index: 100;
   width: 100%;
   background-color: #111111;
+  border-bottom: 2px solid #878787;
   padding-top: 30px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #878787;
 }
 @media (max-width: 1300px) {
   .header {
@@ -225,9 +214,7 @@ h6 {
 .line {
   display: block;
   height: 140px;
-  /* Сохраняет пропорции изображения */
   animation: moveLine 100s linear infinite;
-  /* Анимация для создания эффекта "бегущей линии" */
 }
 @media (max-width: 1300px) {
   .line {
@@ -238,11 +225,9 @@ h6 {
 @keyframes moveLine {
   0% {
     transform: translateX(0);
-    /* Начальное положение */
   }
   100% {
     transform: translateX(-80%);
-    /* Сдвигает изображение на 100% влево */
   }
 }
 .hero {
@@ -305,7 +290,7 @@ h6 {
   }
 }
 
-.poster__conatiner {
+.poster__container {
   position: relative;
 }
 
@@ -415,7 +400,7 @@ h6 {
 }
 @media (max-width: 1200px) {
   .mud__txt-body span {
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
   .mud__txt-body span:last-child {
     display: none;
@@ -434,6 +419,121 @@ h6 {
   }
 }
 
+.services__list {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 991.98px) {
+  .services__list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services__list .services__li:first-child {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 767.98px) {
+  .services__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services__li {
+  transition: 0.3s;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #191919;
+  color: #919191;
+  display: flex;
+  flex-direction: column;
+}
+.services__li:hover .btn {
+  background-color: #FFD51B;
+}
+@media (max-width: 991.98px) {
+  .services__li .service__body {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+  }
+}
+@media (max-width: 474.98px) {
+  .services__li .service__body {
+    margin-top: 0;
+    display: block;
+  }
+}
+
+.services__li_light {
+  background-color: #232323;
+}
+.services__li_light .title {
+  color: #232323;
+  text-shadow: 1px 0 0 #A5A5A5, 0 1px 0 #A5A5A5, -1px 0 0 #A5A5A5, 0 -1px 0 #A5A5A5, 1px 1px #A5A5A5, -1px -1px 0 #A5A5A5, 1px -1px 0 #A5A5A5, -1px 1px 0 #A5A5A5;
+}
+.services__li_light .service__subtitle {
+  color: #A5A5A5;
+}
+.services__li_light .text {
+  color: #A5A5A5;
+}
+
+.service__body {
+  flex: 1 1 auto;
+  margin-bottom: 60px;
+}
+@media (max-width: 1300px) {
+  .service__body {
+    margin-bottom: calc(40px + 20 * (100vw - 360px) / 940);
+  }
+}
+@media (max-width: 991.98px) {
+  .service__body {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 991.98px) and (max-width: 1300px) {
+  .service__body {
+    margin-bottom: calc(40px + 20 * (100vw - 360px) / 940);
+  }
+}
+
+.service__subtitle {
+  color: #919191;
+  font-family: "Archivo Black";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 28px */
+  text-transform: uppercase;
+}
+
+.service__title {
+  color: #191919;
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1300px) {
+  .service__title {
+    font-size: calc(32px + 12 * (100vw - 360px) / 940);
+  }
+}
+
+.service__desqriprion span {
+  display: block;
+  margin-bottom: 10px;
+}
+.service__desqriprion span:last-child {
+  margin-bottom: 0;
+}
+
+.service__btn {
+  text-align: center;
+  margin-bottom: auto;
+}
+
 .gallery {
   width: 100vw;
   overflow: hidden;
@@ -441,15 +541,15 @@ h6 {
 
 .gallery__container {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   animation: moveLine 10s linear infinite;
 }
 @media (max-width: 767.98px) {
   .gallery__container {
     display: block;
     max-width: 1300px;
-    margin: 0px auto;
-    padding: 0px 20px;
+    margin: 0 auto;
+    padding: 0 20px;
     overflow: hidden;
     animation: none;
     -webkit-animation: none;
@@ -464,11 +564,9 @@ h6 {
 @keyframes moveLine {
   0% {
     transform: translateX(0);
-    /* Начальное положение */
   }
   100% {
     transform: translateX(-80%);
-    /* Сдвигает изображение на 100% влево */
   }
 }
 .gallery__img {
@@ -484,9 +582,9 @@ h6 {
     display: none;
   }
   .gallery__img:first-child {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
   }
 }
 
@@ -502,15 +600,14 @@ h6 {
   color: #FFD51B;
 }
 .footer span {
-  margin: 20px 0px 30px 0px;
+  margin: 20px 0 30px 0;
   display: block;
   color: #232323;
-  font-family: "Archivo Black";
+  font-family: "Archivo Black", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  /* 24px */
   text-transform: uppercase;
 }
 @media (max-width: 1300px) {
@@ -526,7 +623,7 @@ body {
 
 .container {
   max-width: 1300px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 0 20px;
   overflow: hidden;
 }

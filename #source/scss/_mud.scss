@@ -1,54 +1,57 @@
+// Base .mud class if any base styles are needed
 .mud {}
 
+// Container for .mud with responsive grid layout
 .mud__container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	@include av('gap', $s3, $s2, $maxWC, $minWC);
+	@include av('gap', $s3, $s2, $maxWC, $minWC); // Adaptive gap between grid items
 
 	@media (max-width: px($wc3)) {
-		display: block;
+		display: block; // Switch to block layout for smaller screens
 	}
 }
 
+// Title within .mud with responsive margins
 .mud-title {
 	@media (max-width: px($wc3)) {
 		display: block;
 		width: 100%;
-		@include av('margin-bottom', $s3, $s2, $maxWC, $minWC);
+		@include av('margin-bottom', $s3, $s2, $maxWC, $minWC); // Adaptive bottom margin for title
 	}
 }
 
+// Text body within .mud, containing paragraphs and spans with responsive paddings and visibility
 .mud__txt-body {
 	p {
-		@include av('margin-bottom', $s3, $s2, $maxWC, $minWC);
+		@include av('margin-bottom', $s3, $s2, $maxWC, $minWC); // Adaptive bottom margin for paragraphs
 	}
 
 	span {
 		display: block;
-		padding-bottom: 10px;
+		padding-bottom: px(10); // Fixed padding-bottom for spans
 
 		@media (max-width: 1200px) {
-			padding-bottom: 0px;
+			padding-bottom: 0; // Remove padding-bottom on wider screens
 
 			&:last-child {
-				display: none;
+				display: none; // Hide the last span on specific screen width
 			}
 		}
 	}
 
 	@media (max-width: px($wc3)) {
 		width: 80%;
-		margin-left: auto;
+		margin-left: auto; // Center-align the text body for medium screens
 	}
 
 	@media (max-width: px($wc2)) {
 		display: block;
-		width: 100%;
+		width: 100%; // Full width for smaller screens
 	}
 }
 
+// Placeholder classes for additional styles if needed
 .mud__txt {}
 
 .text {}
-
-.btn {}

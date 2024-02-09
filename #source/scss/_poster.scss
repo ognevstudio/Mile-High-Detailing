@@ -1,49 +1,57 @@
-.poster {
-}
+// Base .poster class if any base styles are needed
+.poster {}
 
-.poster__conatiner {
+// Container for .poster with relative positioning
+.poster__container {
 	position: relative;
 }
 
+// Text body within .poster, using a grid layout for positioning text
 .poster__txt-body {
 	display: grid;
 	width: fit-content;
 	margin-left: auto;
 	grid-template-columns: 1fr 1fr;
 	justify-content: end;
-	gap: 20px;
+	gap: px(20); // Use px() function for consistency with your spacing system
 
+	// Paragraph styles within the text body
 	p {
 		display: block;
 		width: auto;
 		max-width: 530px;
 
+		// Responsive adjustment for smaller screens
 		@media (max-width: px($wc3)) {
 			width: 100%;
 		}
 	}
 
+	// Adaptive bottom margin for the text body
 	@include av('margin-bottom', $s5, $s3, $maxWC, $minWC);
 
+	// Adjust grid layout for smaller screens
 	@media (max-width: px($wc3)) {
 		grid-template-columns: 1fr;
 	}
 }
 
+// Desktop-specific text styling
 .desktop-text {
 	max-width: 530px;
 
+	// Margin for the first paragraph
 	p:first-child {
-		margin-bottom: 16px;
+		margin-bottom: px(16); // Adjusted to use px() function
 	}
 
+	// Hide on smaller screens
 	@media (max-width: px($wc3)) {
 		display: none;
 	}
 }
 
-
-
+// Desktop image styling, hidden on smaller screens
 .poster__desktop-img {
 	width: 100%;
 
@@ -52,10 +60,10 @@
 	}
 }
 
+// Mobile image styling, shown only on smaller screens
 .poster__mobile-img {
 	display: none;
 	width: 100%;
-
 	max-height: 500px;
 
 	@media (max-width: px($wc3)) {

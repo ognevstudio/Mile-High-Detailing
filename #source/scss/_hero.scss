@@ -1,76 +1,75 @@
+// Hero Line Styles
 .hero-line {
 	@include av('padding-top', 120, 100, $maxWC, $minWC);
 }
 
+// Line Container - Full Viewport Width with Overflow Hidden
 .line__container {
 	width: 100vw;
 	overflow: hidden;
 }
 
+// Animated Line within the Container
 .line {
 	display: block;
-	@include av('height', 140, 60, $maxWC, $minWC);
-
-	/* Сохраняет пропорции изображения */
-	animation: moveLine 100s linear infinite;
-	/* Анимация для создания эффекта "бегущей линии" */
+	@include av('height', 140, 60, $maxWC, $minWC); // Adaptive height based on viewport
+	animation: moveLine 100s linear infinite; // Running line effect
 }
 
+// Keyframes for Running Line Animation
 @keyframes moveLine {
 	0% {
 		transform: translateX(0);
-		/* Начальное положение */
 	}
 
 	100% {
-		transform: translateX(-80%);
-		/* Сдвигает изображение на 100% влево */
+		transform: translateX(-80%); // Moves image 80% to the left, creating a continuous effect
 	}
 }
 
+// Hero Section Styles
 .hero {
-	@include av('margin-top', $s5, $s4, $maxWC, $minWC);
+	@include av('margin-top', $s5, $s4, $maxWC, $minWC); // Adaptive top margin
 }
 
+// Hero Container - Flex Layout with Gap
 .hero__container {
 	display: flex;
-	@include av('gap', $s3, $s2, $maxWC, $minWC);
+	@include av('gap', $s3, $s2, $maxWC, $minWC); // Adaptive gap
 
 	@media (max-width: px($wc4)) {
-		display: block;
+		display: block; // Stacks elements vertically on smaller screens
 	}
 }
 
-.hero__body {}
-
+// Hero Image Styles
 .hero__img {
-
 	width: 60%;
-
 	height: auto;
-	max-height: 500px;
+	max-height: 500px; // Restricts height to maintain proportions
 
 	@media (max-width: px($wc4)) {
-		width: 100%;
+		width: 100%; // Full width on smaller screens
 	}
 }
 
+// Hero Text Body - Responsive Adjustments for Layout
 .hero__txt-body {
 	@media (max-width: px($wc4)) {
-		margin-top: 20px;
-
+		margin-top: px(20); // Fixed margin on smaller screens
 		display: flex;
 		align-items: start;
-		gap: 20px;
+		gap: px(20); // Consistent with spacing system
 	}
 
 	@media (max-width: px($wc2)) {
-		display: block;
+		display: block; // Reverts to block layout on very small screens
 	}
 }
 
+// Hero Text Element - Max Width and Bottom Margin
 .hero__txt {
 	display: block;
 	max-width: 500px;
-	@include av('margin-bottom', $s3, $s2, $maxWC, $minWC);
+	@include av('margin-bottom', $s3, $s2, $maxWC, $minWC); // Adaptive bottom margin
 }

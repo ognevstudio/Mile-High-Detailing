@@ -5,17 +5,15 @@
 
 .gallery__container {
 	display: flex;
-	gap: 20px;
+	gap: px($s2); // Now using a spacing variable wrapped with px()
 	animation: moveLine 10s linear infinite;
 
 	@media (max-width: px($wc3)) {
 		display: block;
-
 		max-width: px($maxWC);
-		margin: 0px auto;
-		padding: 0px px($s3);
+		margin: 0 auto;
+		padding: 0 px($s3);
 		overflow: hidden;
-
 		animation: none;
 		-webkit-animation: none;
 	}
@@ -28,12 +26,9 @@
 @keyframes moveLine {
 	0% {
 		transform: translateX(0);
-		/* Начальное положение */
 	}
-
 	100% {
 		transform: translateX(-80%);
-		/* Сдвигает изображение на 100% влево */
 	}
 }
 
@@ -44,9 +39,9 @@
 		display: none;
 
 		&:first-child {
+			display: block;
 			width: 100%;
 			height: auto;
-			display: block;
 		}
 	}
 }
