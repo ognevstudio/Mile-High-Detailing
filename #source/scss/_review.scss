@@ -1,74 +1,225 @@
+.review__container {}
+
 .sl-container {
-	border: 10px solid #BFE2FF;
-	margin: 20px auto;
-	overflow: hidden;
 	position: relative;
-	width: 640px;
-	height: 420px;
+	@include av('height', 400, 250, $maxWC, $minWC);
+	display: flex;
+	align-items: center;
 	box-sizing: border-box;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
 }
 
 .sl-container .view {
 	position: absolute;
-	top: 0;
+	top: -5;
 	left: 0;
 	overflow: hidden;
 }
 
 .sl-container .view img {
-	width: 640px;
-	max-width: 640px;
+	object-fit: cover;
+	@include av('height', 400, 250, $maxWC, $minWC);
 }
 
 .sl-container .view-before {
-	z-index: 100;
+	border-radius: 6px;
+	z-index: 10;
+	@include av('height', 390, 240, $maxWC, $minWC);
+	max-width: 100%;
+
+	img {
+		height: 100%;
+	}
+
+	@media (max-width: px($wc4)) {
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
 }
 
 .sl-container .view-after {
+	border-radius: 6px;
 	width: 100px;
-	z-index: 200;
+	z-index: 20;
+	@include av('height', 390, 240, $maxWC, $minWC);
+
+	img {
+		height: 100%;
+	}
 }
+
 
 .sl-container .dragme {
 	position: absolute;
-	width: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 2px;
 	height: 100%;
-	top: 0px;
+	/* Will now match the parent's height correctly */
 	left: 100px;
-	background-color: #BFE2FF;
+	/* Adjust as necessary for initial position */
+	background-color: #FFFFFF;
 	cursor: pointer;
-	z-index: 300;
+	z-index: 60;
 }
 
 .sl-container .dr-circle {
-	position: absolute;
-	top: calc(50% - 20px);
-	left: -15px;
 	border-radius: 100%;
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	background-color: #BFE2FF;
+	width: 20px;
+	height: 20px;
+	background-color: #FFFFFF;
 	cursor: pointer;
-	z-index: 300;
+	z-index: 60;
 }
 
-.sl-container .dr-circle i {
-	line-height: 40px;
-	font-size: 20px;
-	color: #337AB7;
-	font-weight: bold;
+.dr-circle-top {
+	top: 0;
 }
 
-@media screen and (max-width: 600px) {
-	.sl-container {
-		width: 320px;
-		height: 210px;
+.dr-circle-bottom {
+	bottom: 0;
+}
+
+
+.review {}
+
+.review__container {}
+
+.container {}
+
+.review__list {
+	width: 100%;
+}
+
+.review__li {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+
+	@media (max-width: px($wc4)) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.sl-container {}
+
+.view {}
+
+.view-after {}
+
+.view-before {}
+
+.dragme {}
+
+.dr-circle {}
+
+.dr-circle-top {}
+
+.dr-circle-bottom {}
+
+.sl-text {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 10px);
+}
+
+.sl-body {
+	flex: 1 1 auto;
+
+	h2 {
+		color: #919191;
+
+		font-family: "Archivo Black";
+		@include av('font-size', 44, 24, $maxWC, $minWC);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+
+		@include av('margin-bottom', 20, 10, $maxWC, $minWC);
 	}
 
-	.sl-container .view img {
-		width: 320px;
-		max-width: 320px;
+	p {
+		@include av('margin-bottom', 20, 10, $maxWC, $minWC);
 	}
+
+
+	@media (max-width: px($wc4)) {
+		@include av('margin-bottom', 40, 20, $maxWC, $minWC);
+	}
+}
+
+.slider-nav {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.prev {
+	background-color: $main-bg;
+
+	svg {
+
+		path {
+			stroke: #919191; // Начальный цвет обводки path
+		}
+
+		// При наведении на .next изменяем stroke для всех path внутри SVG
+		&:hover path {
+			stroke: #FFFFFF;
+		}
+	}
+
+	@media (max-width: px($wc4)) {
+		display: none;
+	}
+}
+
+.next {
+	background-color: $main-bg;
+
+	svg {
+
+		path {
+			stroke: #919191; // Начальный цвет обводки path
+		}
+
+		// При наведении на .next изменяем stroke для всех path внутри SVG
+		&:hover path {
+			stroke: #FFFFFF;
+		}
+	}
+
+	@media (max-width: px($wc4)) {
+		display: none;
+	}
+}
+
+.slider-pagination {
+	display: flex;
+	gap: 10px;
+
+	@media (max-width: px($wc4)) {
+		margin-left: auto;
+	}
+}
+
+.dot {
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+
+	background-color: $main-bg;
+	border: 1px #919191 solid;
+}
+
+.active {
+	border: 1px #FFFFFF solid;
+	background-color: #FFFFFF;
 }
